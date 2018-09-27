@@ -1,5 +1,5 @@
-import React from 'react';
-import { Modal, View, Image, Text, Button, StyleSheet } from 'react-native';
+import React from "react";
+import { Modal, View, Image, Text, Button, StyleSheet } from "react-native";
 
 const placeDetail = props => {
   let modalContent = null;
@@ -7,19 +7,22 @@ const placeDetail = props => {
   if (props.selectedPlace) {
     modalContent = (
       <View>
-        <Image source={props.selectedPlace.image} style={styles.placeImage}/>
+        <Image source={props.selectedPlace.image} style={styles.placeImage} />
         <Text style={styles.placeName}>{props.selectedPlace.name}</Text>
       </View>
     );
   }
   return (
     <Modal
-      visible={props.selectedPlace !== null} animationType="slide">
+      onRequestClose={props.onModalClosed}
+      visible={props.selectedPlace !== null}
+      animationType="slide"
+    >
       <View style={styles.modalContainer}>
         {modalContent}
         <View>
-          <Button title="Delete" color="red" onPress={props.onItemDeleted}/>
-          <Button title="Close" onPress={props.onModalClosed}/>
+          <Button title="Delete" color="red" onPress={props.onItemDeleted} />
+          <Button title="Close" onPress={props.onModalClosed} />
         </View>
       </View>
     </Modal>

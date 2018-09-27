@@ -22,8 +22,8 @@ export default class App extends Component<Props> {
             uri: 'https://softservenews-6eg3vi45jxatmx1gteg.stackpathdns.com/photos/large/1272623_554553014618697_31258193_o.jpg'
           }
         })
-      }
-    })
+      };
+    });
   }
 
   placeDeletedHandler = () => {
