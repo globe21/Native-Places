@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   },
   placeName: {
     fontWeight: "bold",
-    textAlight: "center",
+    textAlign: "center",
     fontSize: 28
   }
 });
