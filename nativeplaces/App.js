@@ -11,4 +11,4 @@ Navigation.startSingleScreenApp({
     screen: 'native-places.AuthScreen',
     title: 'Login'
   }
-});
+})
