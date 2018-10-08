@@ -1,6 +1,5 @@
-import React from "react";
+import React, { Component } from "react";
 import {
-  Modal,
   View,
   Image,
   Text,
@@ -8,43 +7,35 @@ import {
   StyleSheet,
   TouchableOpacity
 } from "react-native";
+import { connect } from 'react-redux';
 
 import Icon from "react-native-vector-icons/Ionicons";
+import { deletePlace } from '../../store/actions/index';
 
-const placeDetail = props => {
-  let modalContent = null;
+class PlaceDetail extends Component {
 
-  if (props.selectedPlace) {
-    modalContent = (
-      <View>
-        <Image source={props.selectedPlace.image} style={styles.placeImage} />
-        <Text style={styles.placeName}>{props.selectedPlace.name}</Text>
-      </View>
+placeDeletedHandler = () => {
+  this.props.onDeletePlace(this.props.selectedPlace.key);
+  this.props.navigator.pop();
+}
+
+  render () {
+    return (
+        <View style={styles.container}>
+          <View>
+            <TouchableOpacity onPress={this.placeDeletedHandler}>
+              <View style={styles.deleteButton}>
+                <Icon size={30} name="ios-trash" color="red" />
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
     );
   }
-  return (
-    <Modal
-      onRequestClose={props.onModalClosed}
-      visible={props.selectedPlace !== null}
-      animationType="slide"
-    >
-      <View style={styles.modalContainer}>
-        {modalContent}
-        <View>
-          <TouchableOpacity onPress={props.onItemDeleted}>
-            <View style={styles.deleteButton}>
-              <Icon size={30} name="ios-trash" color="red" />
-            </View>
-          </TouchableOpacity>
-          <Button title="Close" onPress={props.onModalClosed} />
-        </View>
-      </View>
-    </Modal>
-  );
 };
 
 const styles = StyleSheet.create({
-  modalContainer: {
+  container: {
     margin: 22
   },
   placeImage: {
@@ -61,4 +52,10 @@ const styles = StyleSheet.create({
   }
 });
 
-export default placeDetail;
+const mapDispatchToProps = dispatch => {
+  return {
+    onDeletePlace: (key) => dispatch(deletePlace(key))
+  };
+};
+
+export default connect(null, mapDispatchToProps)(PlaceDetail);
