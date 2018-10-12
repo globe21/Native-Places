@@ -30,7 +30,7 @@ placeDeletedHandler = () => {
               </View>
             </TouchableOpacity>
           </View>
-        </View
+        </View>
     );
   }
 };
