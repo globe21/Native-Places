@@ -41,11 +41,17 @@ const startTabs = () => {
                     }
                 }
             ],
+            tabsStyle : {
+              tabBarSelectedButtonColor: "orange"
+            },
             drawer: {
               left: {
                 screen: "native-places.SideDrawer"
               }
-            }
+            },
+            appStyle : {
+              tabBarSelectedButtonColor: "orange"
+            },
         });
     });
 };
