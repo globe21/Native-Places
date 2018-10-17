@@ -44,6 +44,7 @@
 		3759A6F8829B48F2B7CD13B3 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D17907E8BED7469DB85E19C8 /* Zocial.ttf */; };
 		42A05FE64C9F43EA8BC37D39 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CD764E56A5094A2A99C872CB /* MaterialIcons.ttf */; };
 		632C2CA421602ED7000BE4B9 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 632C2CA321602E9C000BE4B9 /* libRNVectorIcons.a */; };
+		6332C3E22177B1C900914A45 /* libAirMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6332C3BA2177B1A900914A45 /* libAirMaps.a */; };
 		633AE39C2161643400615861 /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 633AE39A2161642100615861 /* libReactNativeNavigation.a */; };
 		633AE39D216164CE00615861 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 632C2CA321602E9C000BE4B9 /* libRNVectorIcons.a */; };
 		633AE39E216164D300615861 /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 633AE39A2161642100615861 /* libReactNativeNavigation.a */; };
@@ -333,6 +334,13 @@
 			remoteGlobalIDString = 5DBEB1501B18CEA900B34395;
 			remoteInfo = RNVectorIcons;
 		};
+		6332C3B92177B1A900914A45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6332C3B52177B1A900914A45 /* AirMaps.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 11FA5C511C4A1296003AC2EE;
+			remoteInfo = AirMaps;
+		};
 		633AE3992161642100615861 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 633AE3702161642100615861 /* ReactNativeNavigation.xcodeproj */;
@@ -390,6 +398,7 @@
 		36026476D49F4121A5CC4005 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		632C2C7921602E9C000BE4B9 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
+		6332C3B52177B1A900914A45 /* AirMaps.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AirMaps.xcodeproj; path = "../node_modules/react-native-maps/lib/ios/AirMaps.xcodeproj"; sourceTree = "<group>"; };
 		633AE3702161642100615861 /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeNavigation.xcodeproj; path = "../node_modules/react-native-navigation/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; };
 		63FC0AE0216035F00055A078 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
 		63FC0AE1216035F00055A078 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
@@ -437,6 +446,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6332C3E22177B1C900914A45 /* libAirMaps.a in Frameworks */,
 				633AE39E216164D300615861 /* libReactNativeNavigation.a in Frameworks */,
 				633AE39D216164CE00615861 /* libRNVectorIcons.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
@@ -642,6 +652,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		6332C3B62177B1A900914A45 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6332C3BA2177B1A900914A45 /* libAirMaps.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		633AE3712161642100615861 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -684,6 +702,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				6332C3B52177B1A900914A45 /* AirMaps.xcodeproj */,
 				633AE3702161642100615861 /* ReactNativeNavigation.xcodeproj */,
 				632C2C7921602E9C000BE4B9 /* RNVectorIcons.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
@@ -862,6 +881,10 @@
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 6332C3B62177B1A900914A45 /* Products */;
+					ProjectRef = 6332C3B52177B1A900914A45 /* AirMaps.xcodeproj */;
+				},
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
@@ -1173,6 +1196,13 @@
 			fileType = archive.ar;
 			path = libRNVectorIcons.a;
 			remoteRef = 632C2CA221602E9C000BE4B9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6332C3BA2177B1A900914A45 /* libAirMaps.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAirMaps.a;
+			remoteRef = 6332C3B92177B1A900914A45 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		633AE39A2161642100615861 /* libReactNativeNavigation.a */ = {
@@ -1590,7 +1620,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native-navigation/ios/**";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../node_modules/react-native-navigation/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-maps/lib/ios/AirMaps/**",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1637,7 +1670,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/../node_modules/react-native-navigation/ios/**";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/../node_modules/react-native-navigation/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-maps/lib/ios/AirMaps/**",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
