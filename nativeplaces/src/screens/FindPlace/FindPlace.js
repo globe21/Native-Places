@@ -1,13 +1,19 @@
-import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Animated } from 'react-native';
-import { connect } from 'react-redux';
+import React, { Component } from "react";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  Animated
+} from "react-native";
+import { connect } from "react-redux";
 
-import PlaceList from '../../components/PlaceList/PlaceList';
+import PlaceList from "../../components/PlaceList/PlaceList";
 
 class FindPlaceScreen extends Component {
   static navigatorStyle = {
     navBarButtonColor: "orange"
-  }
+  };
 
   state = {
     placesLoaded: false,
@@ -25,18 +31,18 @@ class FindPlaceScreen extends Component {
       if (event.id === "sideDrawerToggle") {
         this.props.navigator.toggleDrawer({
           side: "left"
-        })
+        });
       }
     }
-  }
+  };
 
   placesLoadedHandler = () => {
     Animated.timing(this.state.placesAnim, {
       toValue: 1,
-      duration: 1000,
+      duration: 500,
       useNativeDriver: true
     }).start();
-  }
+  };
 
   placesSearchHandler = () => {
     Animated.timing(this.state.removeAnim, {
@@ -46,7 +52,7 @@ class FindPlaceScreen extends Component {
     }).start(() => {
       this.setState({
         placesLoaded: true
-      })
+      });
       this.placesLoadedHandler();
     });
   };
@@ -62,9 +68,9 @@ class FindPlaceScreen extends Component {
         selectedPlace: selPlace
       }
     });
-};
+  };
 
-  render () {
+  render() {
     let content = (
       <Animated.View
         style={{
@@ -77,7 +83,8 @@ class FindPlaceScreen extends Component {
               })
             }
           ]
-        }}>
+        }}
+      >
         <TouchableOpacity onPress={this.placesSearchHandler}>
           <View style={styles.searchButton}>
             <Text style={styles.searchButtonText}>Find Places</Text>
@@ -87,9 +94,10 @@ class FindPlaceScreen extends Component {
     );
     if (this.state.placesLoaded) {
       content = (
-        <Animated.View style={{
-          opacity: this.state.placesAnim
-        }}
+        <Animated.View
+          style={{
+            opacity: this.state.placesAnim
+          }}
         >
           <PlaceList
             places={this.props.places}
@@ -129,6 +137,6 @@ const mapStateToProps = state => {
   return {
     places: state.places.places
   };
-}
+};
 
 export default connect(mapStateToProps)(FindPlaceScreen);

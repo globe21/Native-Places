@@ -1,5 +1,5 @@
-import React from 'react';
-import { TextInput, StyleSheet } from 'react-native';
+import React from "react";
+import { TextInput, StyleSheet } from "react-native";
 
 const defaultInput = props => (
   <TextInput
@@ -8,8 +8,6 @@ const defaultInput = props => (
     style={[styles.input, props.style, !props.valid && props.touched ? styles.invalid : null]}
   />
 );
-
-export default defaultInput;
 
 const styles = StyleSheet.create({
   input: {
@@ -22,6 +20,8 @@ const styles = StyleSheet.create({
   },
   invalid: {
     backgroundColor: '#f9c0c0',
-    borderColor: 'red'
+    borderColor: "red"
   }
 });
+
+export default defaultInput;

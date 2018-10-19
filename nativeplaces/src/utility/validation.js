@@ -29,11 +29,11 @@ const emailValidator = val => {
 };
 
 const minLengthValidator = (val, minLength) => {
-    return val.length >= minLength;
+  return val.length >= minLength;
 };
 
 const equalToValidator = (val, checkValue) => {
-    return val === checkValue;
+  return val === checkValue;
 };
 
 const notEmptyValidator = val => {

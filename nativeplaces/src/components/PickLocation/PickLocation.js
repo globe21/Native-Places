@@ -1,12 +1,19 @@
-import React, { Component } from 'react';
-import { View, Image, Button, StyleSheet, Text, Dimensions } from 'react-native';
-import MapView from 'react-native-maps';
+import React, { Component } from "react";
+import {
+  View,
+  Image,
+  Button,
+  StyleSheet,
+  Text,
+  Dimensions
+} from "react-native";
+import MapView from "react-native-maps";
 
 class PickLocation extends Component {
   state = {
     focusedLocation: {
-      latitude: 30.2672,
-      longitude: -97.7431,
+      latitude: 37.7900352,
+      longitude: -122.4013726,
       latitudeDelta: 0.0122,
       longitudeDelta:
         Dimensions.get("window").width /

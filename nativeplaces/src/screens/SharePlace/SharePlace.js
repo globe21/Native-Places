@@ -101,7 +101,7 @@ class SharePlaceScreen extends Component {
         }
       };
     });
-  };
+  }
 
   placeAddedHandler = () => {
     this.props.onAddPlace(
@@ -118,7 +118,7 @@ class SharePlaceScreen extends Component {
           <MainText>
             <HeadingText>Share a Place with us!</HeadingText>
           </MainText>
-          <PickImage onImagePicked={this.imagePickedHandler}/>
+          <PickImage onImagePicked={this.imagePickedHandler} />
           <PickLocation onLocationPick={this.locationPickedHandler} />
           <PlaceInput
             placeData={this.state.controls.placeName}
