@@ -9,11 +9,12 @@ class PickLocation extends Component {
       longitude: -97.7431,
       latitudeDelta: 0.0122,
       longitudeDelta:
-      Dimensions.get('window').width / Dimensions.get('window').height *
-      0.0122
+        Dimensions.get("window").width /
+        Dimensions.get("window").height *
+        0.0122
     },
     locationChosen: false
-  }
+  };
 
   pickLocationHandler = event => {
     const coords = event.nativeEvent.coordinate;
@@ -31,11 +32,11 @@ class PickLocation extends Component {
         },
         locationChosen: true
       };
-    })
+    });
     this.props.onLocationPick({
       latitude: coords.latitude,
       longitude: coords.longitude
-    })
+    });
   };
 
   getLocationHandler = () => {
@@ -52,16 +53,17 @@ class PickLocation extends Component {
     },
   err => {
     console.log(err);
+    alert("Fetching the Position failed, please pick one manually!");
   })
-  };
+  }
 
   render() {
     let marker = null;
 
     if (this.state.locationChosen) {
-      marker =
-      <MapView.Marker coordinate={this.state.focusedLocation}/>
+      marker = <MapView.Marker coordinate={this.state.focusedLocation} />;
     }
+
     return (
       <View style={styles.container}>
         <MapView
@@ -73,9 +75,9 @@ class PickLocation extends Component {
           {marker}
         </MapView>
         <View style={styles.button}>
-        <Button title="Locate Me" onPress={this.getLocationHandler}/>
+          <Button title="Locate Me" onPress={this.getLocationHandler} />
         </View>
-     </View>
+      </View>
     );
   }
 }
