@@ -1,4 +1,4 @@
-import { UI_START_LOADING, UI_STOP_LOADING } from '.actions/actionTypes';
+import { UI_START_LOADING, UI_STOP_LOADING } from "../actions/actionTypes";
 
 const initialState = {
   isLoading: false
@@ -15,9 +15,9 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false
-      }
+      };
     default:
-    return state;
+      return state;
   }
 };
 
