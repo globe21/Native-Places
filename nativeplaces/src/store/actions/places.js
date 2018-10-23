@@ -10,7 +10,7 @@ export const addPlace = (placeName, location, image) => {
                 image: image.base64
             })
         })
-        .catch(err => {
+        .catc(err => {
             console.log(err);
             alert("Something went wrong, please try again!");
             dispatch(uiStopLoading());
