@@ -74,7 +74,7 @@ export const setPlaces = places => {
 export const deletePlace = (key) => {
     return dispatch => {
         dispatch(removePlace(key));
-        fetch("https://native-places-1539800355929.firebaseio.com/places/" + key + ".json", {
+        fetch("https://awesome-places-1511248766522.firebaseio.com/places/" + key + ".json", {
             method: "DELETE"
         })
         .catch(err => {
