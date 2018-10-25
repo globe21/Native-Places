@@ -19,27 +19,35 @@ admin.initializeApp({
 // // https://firebase.google.com/docs/functions/write-firebase-functions
 //
 exports.storeImage = functions.https.onRequest((request, response) => {
-  return cors(request, response, () => {
-    if (!request.headers.authorization || !request.headers.authorization.startsWith("Bearer ")) {
+  cors(request, response, () => {
+    if (
+      !request.headers.authorization ||
+      !request.headers.authorization.startsWith("Bearer ")
+    ) {
       console.log("No token present!");
-      response.status(403).json({error: "Unauthorized"});
+      response.status(403).json({ error: "Unauthorized" });
       return;
     }
     let idToken;
-    idToken = request.headers.authorization.split("Bearer ")[1]
+    idToken = request.headers.authorization.split("Bearer ")[1];
     admin
       .auth()
       .verifyIdToken(idToken)
       .then(decodedToken => {
         const body = JSON.parse(request.body);
-        fs.writeFileSync("/tmp/uploaded-image.jpg", body.image, "base64", err => {
-          console.log(err);
-          return response.status(500).json({ error: err });
-        })
+        fs.writeFileSync(
+          "/tmp/uploaded-image.jpg",
+          body.image,
+          "base64",
+          err => {
+            console.log(err);
+            return response.status(500).json({ error: err });
+          }
+        );
         const bucket = gcs.bucket('native-places-1539800355929.appspot.com');
         const uuid = UUID();
 
-        return bucket.upload(
+        bucket.upload(
           "/tmp/uploaded-image.jpg",
           {
             uploadType: "media",
@@ -53,7 +61,7 @@ exports.storeImage = functions.https.onRequest((request, response) => {
           },
           (err, file) => {
             if (!err) {
-              return response.status(201).json({
+              response.status(201).json({
                 imageUrl:
                   "https://firebasestorage.googleapis.com/v0/b/" +
                   bucket.name +
@@ -64,7 +72,7 @@ exports.storeImage = functions.https.onRequest((request, response) => {
               });
             } else {
               console.log(err);
-              return response.status(500).json({ error: err });
+              response.status(500).json({ error: err });
             }
           }
         );
@@ -72,6 +80,6 @@ exports.storeImage = functions.https.onRequest((request, response) => {
       .catch(error => {
         console.log("Token is invalid!");
         response.status(403).json({error: "Unauthorized"});
-      })
+      });
   });
 });

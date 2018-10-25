@@ -37,7 +37,9 @@ Navigation.registerComponent(
 );
 Navigation.registerComponent(
   "native-places.SideDrawer",
-  () => SideDrawer
+  () => SideDrawer,
+  store,
+  Provider
 );
 
 // Start a App

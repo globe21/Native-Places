@@ -19,7 +19,7 @@ export const addPlace = (placeName, location, image) => {
               image: image.base64
             }),
             headers: {
-              "Authorization": "Bearer " + authToken
+              Authorization: "Bearer " + authToken
             }
           }
         );
@@ -64,52 +64,52 @@ export const getPlaces = () => {
         return fetch(
           "https://native-places-1539800355929.firebaseio.com/places.json?auth=" +
             token
-        );
-      })
-      .catch(() => {
-        alert("No valid token found!");
-      })
-      .then(res => res.json())
-      .then(parsedRes => {
-        const places = [];
-        for (let key in parsedRes) {
-          places.push({
-            ...parsedRes[key],
-            image: {
-              uri: parsedRes[key].image
-            },
-            key: key
-          });
-        }
-        dispatch(setPlaces(places));
-      })
-      .catch(err => {
-        alert("Something went wrong, sorry :/");
-        console.log(err);
-      });
+          );
+        })
+        .catch(() => {
+          alert("No valid token found!");
+        })
+        .then(res => res.json())
+        .then(parsedRes => {
+          const places = [];
+          for (let key in parsedRes) {
+            places.push({
+              ...parsedRes[key],
+              image: {
+                uri: parsedRes[key].image
+              },
+              key: key
+            });
+          }
+          dispatch(setPlaces(places));
+        })
+        .catch(err => {
+          alert("Something went wrong, sorry :/");
+          console.log(err);
+        });
+    };
   };
-};
 
-export const setPlaces = places => {
-  return {
-    type: SET_PLACES,
-    places: places
+  export const setPlaces = places => {
+    return {
+      type: SET_PLACES,
+      places: places
+    };
   };
-};
 
-export const deletePlace = key => {
-  return dispatch => {
-    dispatch(authGetToken())
-      .catch(() => {
-        alert("No valid token found!");
-      })
-      .then(token => {
-        dispatch(removePlace(key));
-        return fetch(
-          "https://native-places-1539800355929.firebaseio.com/places/" +
-            key +
-            ".json?auth=" +
-            token,
+  export const deletePlace = key => {
+    return dispatch => {
+      dispatch(authGetToken())
+        .catch(() => {
+          alert("No valid token found!");
+        })
+        .then(token => {
+          dispatch(removePlace(key));
+          return fetch(
+            "https://native-places-1539800355929.firebaseio.com/places/" +
+              key +
+              ".json?auth=" +
+              token,
           {
             method: "DELETE"
           }
