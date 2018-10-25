@@ -1,5 +1,16 @@
-import { SET_PLACES, REMOVE_PLACE } from "./actionTypes";
+import {
+  SET_PLACES,
+  REMOVE_PLACE,
+  PLACE_ADDED,
+  START_ADD_PLACE
+} from "./actionTypes";
 import { uiStartLoading, uiStopLoading, authGetToken } from "./index";
+
+export const startAddPlace = () => {
+  return {
+    type: START_ADD_PLACE
+  };
+};
 
 export const addPlace = (placeName, location, image) => {
   return dispatch => {
@@ -29,31 +40,52 @@ export const addPlace = (placeName, location, image) => {
         alert("Something went wrong, please try again!");
         dispatch(uiStopLoading());
       })
-      .then(res => res.json())
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          throw new Error();
+        }
+      })
       .then(parsedRes => {
         const placeData = {
           name: placeName,
           location: location,
-          image: parsedRes.imageUrl
+          image: parsedRes.imageUrl,
+          imagePath: parsedRes.imagePath
         };
         return fetch(
-          "https://native-places-1539800355929.firebaseio.com/places.json?auth" + authToken,
+          "https://native-places-1539800355929.firebaseio.com/places.json?auth=" +
+            authToken,
           {
             method: "POST",
             body: JSON.stringify(placeData)
           }
         );
       })
-      .then(res => res.json())
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          throw new Error();
+        }
+      })
       .then(parsedRes => {
         console.log(parsedRes);
         dispatch(uiStopLoading());
+        dispatch(placeAdded());
       })
       .catch(err => {
         console.log(err);
         alert("Something went wrong, please try again!");
         dispatch(uiStopLoading());
       });
+  };
+};
+
+export const placeAdded = () => {
+  return {
+    type: PLACE_ADDED
   };
 };
 
@@ -64,58 +96,70 @@ export const getPlaces = () => {
         return fetch(
           "https://native-places-1539800355929.firebaseio.com/places.json?auth=" +
             token
-          );
-        })
-        .catch(() => {
-          alert("No valid token found!");
-        })
-        .then(res => res.json())
-        .then(parsedRes => {
-          const places = [];
-          for (let key in parsedRes) {
-            places.push({
-              ...parsedRes[key],
-              image: {
-                uri: parsedRes[key].image
-              },
-              key: key
-            });
-          }
-          dispatch(setPlaces(places));
-        })
-        .catch(err => {
-          alert("Something went wrong, sorry :/");
-          console.log(err);
-        });
-    };
+        );
+      })
+      .catch(() => {
+        alert("No valid token found!");
+      })
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          throw new Error();
+        }
+      })
+      .then(parsedRes => {
+        const places = [];
+        for (let key in parsedRes) {
+          places.push({
+            ...parsedRes[key],
+            image: {
+              uri: parsedRes[key].image
+            },
+            key: key
+          });
+        }
+        dispatch(setPlaces(places));
+      })
+      .catch(err => {
+        alert("Something went wrong, sorry :/");
+        console.log(err);
+      });
   };
+};
 
-  export const setPlaces = places => {
-    return {
-      type: SET_PLACES,
-      places: places
-    };
+export const setPlaces = places => {
+  return {
+    type: SET_PLACES,
+    places: places
   };
+};
 
-  export const deletePlace = key => {
-    return dispatch => {
-      dispatch(authGetToken())
-        .catch(() => {
-          alert("No valid token found!");
-        })
-        .then(token => {
-          dispatch(removePlace(key));
-          return fetch(
-            "https://native-places-1539800355929.firebaseio.com/places/" +
-              key +
-              ".json?auth=" +
-              token,
+export const deletePlace = key => {
+  return dispatch => {
+    dispatch(authGetToken())
+      .catch(() => {
+        alert("No valid token found!");
+      })
+      .then(token => {
+        dispatch(removePlace(key));
+        return fetch(
+          "https://native-places-1539800355929.firebaseio.com/places/" +
+            key +
+            ".json?auth=" +
+            token,
           {
             method: "DELETE"
           }
         );
       })
-      .then(res => res.json())
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          throw new Error();
+        }
+      })
       .then(parsedRes => {
         console.log("Done!");
       })
