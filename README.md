@@ -25,9 +25,8 @@ When first opening the app, users are greeted with a Login page. They may log in
 <img src="screenshots/screen1.jpg" width="600" height="600"/>
 <br>
 <img src="screenshots/screen2.jpg" width="600" height="600"/>
-<br><br>
+<br>
 </p>
-
 <p align="center">
 <img src="screenshots/screen3.jpg" width="600" height="600"/>
 <br><br>
