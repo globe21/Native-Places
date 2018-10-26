@@ -23,7 +23,7 @@ Animated API<br>
 <p align="center">
 <img src="screenshots/screen1.jpg" width="500" height="500"/>
 <br>
-<img src="screenshots/screen2.jpg"/>
+<img src="screenshots/screen2.jpg" width="500" height="500"/>
 <br><br>
 /p>
 
