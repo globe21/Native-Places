@@ -19,6 +19,7 @@ Dimensions APIs<br>
 Platform API<br>
 Animated API<br>
 
+When first opening the app, users are greeted with a Login page. They may log in if they have already signed up, or may click on the Switch to Sign Up button to create an account. Users have to enter a valid email (Regex validation will check for that), and their password input has to match their confirm password input. The submit button will be disabled until every condition has been fulfilled.
 
 <p align="center">
 <img src="screenshots/screen1.jpg" width="600" height="600"/>
@@ -26,8 +27,6 @@ Animated API<br>
 <img src="screenshots/screen2.jpg" width="600" height="600"/>
 <br><br>
 </p>
-
-When first opening the app, users are greeted with a Login page. They may log in if they have already signed up, or may click on the Switch to Sign Up button to create an account. Users have to enter a valid email (Regex validation will check for that), and their password input has to match their confirm password input. The submit button will be disabled until every condition has been fulfilled.
 
 <p align="center">
 <img src="screenshots/screen3.jpg" width="600" height="600"/>
