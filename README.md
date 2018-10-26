@@ -13,7 +13,7 @@ React-Native-Image-Picker<br>
 React-Native-Navigation<br>
 React-Native-Maps<br>
 
-APIs
+APIs<br>
 Dimensions APIs<br>
 Platform API<br>
 Animated API<br>
@@ -21,4 +21,9 @@ Animated API<br>
 <img src="screenshots/screen1.jpg"/>
 <br>
 <img src="screenshots/screen2.jpg"/>
+<br><br>
+
+When first opening the app, users are greeted with a Login page. They may log in if they have already signed up, or may click on the Switch to Sign Up button to create an account.
+
+<img src="screenshots/screen3.jpg"/>
 <br><br>
