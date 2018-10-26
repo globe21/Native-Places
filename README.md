@@ -1,22 +1,22 @@
 # Native-Places
 Native Places is a React Native mobile application for IOS and Android where users can share amazing pictures and the location where they took them. It has user authentication, the ability to use and view a map, take pictures with a camera, and share their place for the world to see.
 
-Technologies used:
-React 16.5 <br>
-React-Native 57.1 <br>
-Firebase for cloud functions, back-end storage, database and authentication
-FlexBox for positioning elements
+Technologies used:<br>
+React 16.5<br>
+React-Native 57.1<br>
+Firebase for cloud functions, back-end storage, database and authentication<br>
+FlexBox for positioning elements<br>
 
-Third Party Packages:
-React-Native-Vector-Icons (Ionicons)
-React-Native-Image-Picker
-React-Native-Navigation
-React-Native-Maps
+Third Party Packages:<br>
+React-Native-Vector-Icons (Ionicons)<br>
+React-Native-Image-Picker<br>
+React-Native-Navigation<br>
+React-Native-Maps<br>
 
 APIs
-Dimensions APIs
-Platform API
-Animated API
+Dimensions APIs<br>
+Platform API<br>
+Animated API<br>
 
 <img src="screenshots/screen1.jpg"/>
 <br>
