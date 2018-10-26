@@ -27,3 +27,10 @@ When first opening the app, users are greeted with a Login page. They may log in
 
 <img src="screenshots/screen3.jpg"/>
 <br><br>
+
+After creating an account, users land on the Find Place screen. They can click on Find Places to see all the places other people have shared as well as any places they have shared themselves. If you would like to share a place, simply click on the Share Place tab on the bottom right of the screen to land on the Share Place Screen.
+
+<img src="screenshots/screen4.jpg"/>
+<br>
+<img src="screenshots/screen5.jpg"/>
+<br><br>
