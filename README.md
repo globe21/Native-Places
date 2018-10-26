@@ -19,7 +19,7 @@ Dimensions APIs<br>
 Platform API<br>
 Animated API<br>
 
-<img src="screenshots/screen1.jpg" width="500" height="500" align="middle"/>
+<center><img src="screenshots/screen1.jpg" width="500" height="500"/></center>
 <br>
 <img src="screenshots/screen2.jpg"/>
 <br><br>
