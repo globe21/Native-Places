@@ -67,14 +67,14 @@ Users can then scroll down to the bottom of the screen and enter a name for the 
 <br><br>
 </p>
 
-They are then redirected to the Find Place screen once again. Upon clicking on Find Places, an animation will occur and then all the places people have shared will fade into the screen.
+They are then redirected to the Find Place screen once again. Upon clicking on Find Places, an animation will occur and then all the places people have shared will fade into the screen. Users can click on the different places that people have shared which will then display the image and location together for viewing.
 
 <p align="center">
 <img src="screenshots/screen9.jpg" width="600" height="600"/>
 <br><br>
 </p>
 
-Users can click on the different places that people have shared which will then display the image and location together for viewing. They can also remove places that they shared if they choose to do so.
+They can also remove places that they shared if they choose to do so by simply clicking on the red trash can icon. If they would like to add more places, they can simply click on the Share Place icon again on the bottom right or the Side Drawer and add a new place!
 
 <p align="center">
 <img src="screenshots/screen10.jpg" width="600" height="600"/>
