@@ -5,14 +5,14 @@ const fs = require('fs');
 const UUID = require('uuid-v4');
 
 const gcconfig = {
-  projectId: 'native-places-1539800355929',
-  keyFilename: 'native-places.json'
+  projectId: 'native-places1',
+  keyFilename: 'native-places1.json'
 };
 
 const gcs = require('@google-cloud/storage')(gcconfig);
 
 admin.initializeApp({
-  credential: admin.credential.cert(require('./native-places.json'))
+  credential: admin.credential.cert(require('./native-places1.json'))
 });
 
 // // Create and Deploy Your First Cloud Functions
@@ -44,7 +44,7 @@ exports.storeImage = functions.https.onRequest((request, response) => {
             return response.status(500).json({ error: err });
           }
         );
-        const bucket = gcs.bucket('native-places-1539800355929.appspot.com');
+        const bucket = gcs.bucket('native-places1.appspot.com');
         const uuid = UUID();
 
         bucket.upload(
@@ -91,6 +91,6 @@ exports.deleteImage = functions.database
     const placeData = snapshot.val();
     const imagePath = placeData.imagePath;
 
-    const bucket = gcs.bucket("YOUR_PROJECT_ID.appspot.com");
+    const bucket = gcs.bucket("native-places1.appspot.com");
     return bucket.file(imagePath).delete();
   });

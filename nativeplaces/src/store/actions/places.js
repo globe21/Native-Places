@@ -23,7 +23,7 @@ export const addPlace = (placeName, location, image) => {
       .then(token => {
         authToken = token;
         return fetch(
-          "https://us-central1-native-places-1539800355929.cloudfunctions.net/storeImage",
+          "https://us-central1-native-places1.cloudfunctions.net/storeImage",
           {
             method: "POST",
             body: JSON.stringify({
@@ -55,7 +55,7 @@ export const addPlace = (placeName, location, image) => {
           imagePath: parsedRes.imagePath
         };
         return fetch(
-          "https://native-places-1539800355929.firebaseio.com/places.json?auth=" +
+          "https://native-places1.firebaseio.com/places.json?auth=" +
             authToken,
           {
             method: "POST",
@@ -94,7 +94,7 @@ export const getPlaces = () => {
     dispatch(authGetToken())
       .then(token => {
         return fetch(
-          "https://native-places-1539800355929.firebaseio.com/places.json?auth=" +
+          "https://native-places1.firebaseio.com/places.json?auth=" +
             token
         );
       })
@@ -144,7 +144,7 @@ export const deletePlace = key => {
       .then(token => {
         dispatch(removePlace(key));
         return fetch(
-          "https://native-places-1539800355929.firebaseio.com/places/" +
+          "https://native-places1.firebaseio.com/places/" +
             key +
             ".json?auth=" +
             token,

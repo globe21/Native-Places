@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "native-places-1539800355929"
+    "default": "native-places1",
+    "native-places1": "native-places1"
   }
 }
